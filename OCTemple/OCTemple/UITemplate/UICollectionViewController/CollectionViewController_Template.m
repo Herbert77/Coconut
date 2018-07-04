@@ -11,7 +11,9 @@
 
 @interface <#Unit#>ViewController () <#usedDelegateInController#>
 @property (strong, nonatomic) UICollectionView *collectionView;
-@property (nonatomic ,strong) NSMutableArray   *dsArr;
+@property (strong, nonatomic) NSMutableArray   *dsArr;
+@property (assign, nonatomic) NSInteger         page;
+@property (assign, nonatomic) NSInteger         dataTotal;
 @end
 
 @implementation <#Unit#>ViewController
@@ -33,9 +35,17 @@
     
 }
 
-#pragma mark - UI
-- (void)addSubviews {
+- (void)setupUI
+{
     [self.view addSubview:self.collectionView];
+    [self setLayout];
+}
+
+- (void)startToRequest
+{
+    self.page = 0;
+    self.dataTotal = 0;
+    [self requestRawDataWithPage:self.page];
 }
 
 - (void)setLayout {
@@ -61,6 +71,11 @@
         [_collectionView registerClass:[<#Unit#>CollectionCell class] forCellWithReuseIdentifier:NSStringFromClass([<#Unit#>CollectionCell class])];
         
       //[_collectionView registerClass:[<#Unit#>HeaderCRView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([<#Unit#>HeaderCRView class])];
+        
+        [self addUploadWithView:_collectionView andRefreshingBlock:^{
+            weakSelf.page++;
+            [weakSelf requestRawDataWithPage:weakSelf.page];
+        }];
     }
     return _collectionView;
 }
@@ -70,6 +85,22 @@
         _dsArr = [NSMutableArray new];
     }
     return _dsArr;
+}
+
+#pragma mark - Request
+- (void)requestRawDataWithPage:(NSInteger)page {
+    
+    
+    
+    [FaceFunsNetManager connectWithModel:param WithUrlSring:HOST isShowLoading:NO success:^(id dic) {
+        
+        
+        [self endRefreshingWithDataArray:[NSArray new] total:self.dataTotal];
+        
+    } failure:^(NSError *error) {
+        
+        [self endRefreshing];
+    }];
 }
 
 #pragma mark - CollectionViewDelegate

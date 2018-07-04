@@ -10,9 +10,6 @@
 #import "<#Unit#>Cell.h"
 
 @interface <#Unit#>ViewController () <#usedDelegateInController#>
-{
-    NSInteger page;
-}
 @property (strong, nonatomic) UITableView    *tableView;
 @property (strong, nonatomic) NSMutableArray *dsArr;
 @property (assign, nonatomic) NSInteger       page;
@@ -40,7 +37,8 @@
 
 - (void)setupUI
 {
-    
+    [self.view addSubview:self.tableView];
+    [self setLayout];
 }
 
 - (void)startToRequest
@@ -48,11 +46,6 @@
     self.page = 0;
     self.dataTotal = 0;
     [self requestRawDataWithPage:self.page];
-}
-
-#pragma mark - UI
-- (void)addSubviews {
-    [self.view addSubview:self.tableView];
 }
 
 - (void)setLayout {
