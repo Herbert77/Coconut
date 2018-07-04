@@ -1,0 +1,7 @@
+- (UIView *)@clipboard {
+    if (!_@clipboard) {
+        _@clipboard = [[UIView alloc] init];
+        [_@clipboard setBackgroundColor:[UIColor whiteColor]]; 
+    }
+    return _@clipboard;
+}

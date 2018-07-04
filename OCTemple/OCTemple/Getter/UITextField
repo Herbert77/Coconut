@@ -1,0 +1,14 @@
+- (UITextField *)@clipboard {
+    if (!_@clipboard) {
+        _@clipboard = [[UITextField alloc] init];
+        [_@clipboard setPlaceholder:@"请输入文本"];
+        [_@clipboard setFont:[UIFont systemFontOfSize:16]];
+        [_@clipboard setKeyboardType:UIKeyboardTypeDefault];
+        [_@clipboard setClearButtonMode:UITextFieldViewModeWhileEditing];
+        [_@clipboard setClearsOnBeginEditing:NO];
+        [_@clipboard setTextAlignment:NSTextAlignmentLeft];
+        [_@clipboard setReturnKeyType:UIReturnKeyDone];
+        [_@clipboard setDelegate:self];
+    }
+    return _@clipboard;
+}

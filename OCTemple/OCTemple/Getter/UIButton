@@ -1,0 +1,17 @@
+- (UIButton *)@clipboard {
+    if (!_@clipboard) {
+        _@clipboard = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_@clipboard setBackgroundColor:[UIColor clearColor]];
+        [_@clipboard.titleLabel setFont:[UIFont systemFontOfSize:16]];
+        [_@clipboard setImageEdgeInsets:UIEdgeInsetsMake(12, 10, 12, 12)];
+        
+        [_@clipboard setTitle:@"" forState:UIControlStateNormal];
+        [_@clipboard setTitle:@"" forState:UIControlStateHighlighted];
+        [_@clipboard addTarget:self action:@selector(@clipboardAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _@clipboard;
+}
+
+- (void)@clipboardAction:(UIButton *)sender {
+    
+}

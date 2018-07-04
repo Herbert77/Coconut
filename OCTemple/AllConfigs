@@ -1,0 +1,111 @@
+-------------------------- UITableViewController --------------------------
+
+{   
+	"BuilderType" : "UITableViewController",
+
+	"Unit" : "HCY_Coconut",
+
+	"rootViewController" : "UITableViewController”,
+
+	"usedDelegateInController" : ["UITableViewDelegate", "UITableViewDataSource"],
+
+	"usedDelegateInCell" : [],
+
+	"subviewsInCell" : 
+	{
+		"fruitNameLabel" : "UILabel",
+
+		"fruitImageV" : "UIImageView",
+
+		"inputTextField" : "UITextField"
+	},
+
+	"propertyInCellViewModel" :
+	{
+		"fruitName" : "NSString",
+
+		"fruitImageUrl" : "NSString",
+
+		"inputPlaceHolder" : "NSString"
+	}
+}
+
+-------------------------- UICollectionViewController --------------------------
+
+{   
+	"BuilderType" : "UICollectionViewController",
+
+	"Unit" : "HCY_Coconut",
+	
+	"rootViewController" : "UICollectionViewController",
+
+	"usedDelegateInController" : ["UICollectionViewDataSource", "UICollectionViewDelegate", "UICollectionViewDelegateFlowLayout"],
+
+	"usedDelegateInCell" : [],
+
+	"usedDelegateInCRView" : [],
+
+	"subviewsInCell" : 
+	{
+		"fruitNameLabel" : "UILabel",
+
+		"fruitImageV" : "UIImageView",
+
+		"inputTextField" : "UITextField"
+	},
+
+	"propertyInCellViewModel" :
+	{
+		"fruitName" : "NSString",
+
+		"fruitImageUrl" : "NSString",
+
+		"inputPlaceHolder" : "NSString"
+	},
+
+	"propertyInCRView" : 
+	{
+		"userNameLabel" : "UILabel"
+	},
+
+	"propertyInCRViewViewModel" :
+	{
+		"userName" : "NSString"
+	}
+}
+
+--------------------------  --------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

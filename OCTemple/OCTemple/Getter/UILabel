@@ -1,0 +1,11 @@
+- (UILabel *)@clipboard {
+    if (!_@clipboard) {
+        _@clipboard = [[UILabel alloc] init];
+        [_@clipboard setTextColor:[UIColor blackColor]];
+        [_@clipboard setFont:[UIFont systemFontOfSize:16]];
+        [_@clipboard setTextAlignment:NSTextAlignmentCenter];
+        [_@clipboard setNumberOfLines:0];
+        [_@clipboard sizeToFit];
+    }
+    return _@clipboard;
+}

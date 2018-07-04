@@ -1,0 +1,9 @@
+- (UIImageView *)@clipboard {
+    if (!_@clipboard) {
+        _@clipboard = [[UIImageView alloc] init];
+	[_@clipbboard setClipsToBounds:YES];
+        [_@clipboard setUserInteractionEnabled:NO];
+	[_@clipboard setContentMode:UIViewContentModeScaleAspectFill];
+    }
+    return _@clipboard;
+}
